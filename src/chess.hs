@@ -4,16 +4,8 @@ import qualified Data.Set as S
 import qualified Data.List as L
 import qualified Data.Text as T
 import Data.Maybe
-import Debug.Trace
 
-data Piece = King | Queen | Rook | Bishop | Knight deriving (Eq, Show, Enum)
-
-traceShowId a = trace (show a) a
-tracePcsLeft a = trace ("pieces left: " L.++ show a) a
-traceSafeSqs a = trace ("safe squares: " L.++ show a) a 
-traceIndex i = trace ("\n--Search--\n-> " L.++ show i) i
-traceRemBoard a = trace ("rem board: " L.++ show a) a
-traceSearch bc ps pb i = trace ("\n--Search--\nindex: " L.++ show i L.++ "\nboard: " L.++ show bc L.++ "\npieceSet: " L.++ show ps L.++ "\npieces: " L.++ show pb) False
+data Piece = King | Queen | Rook | Bishop | Knight deriving (Eq)
 
 solve files ranks k q r b n =
     let 
